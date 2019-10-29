@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.saurabh.navigationappktn.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_checkUserFragment"
+            app:destination="@+id/checkUserFragment">
+
+
+
+        </action>
+
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/checkUserFragment"
+        android:name="com.saurabh.navigationappktn.CheckUserFragment"
+        android:label="fragment_check_user"
+        tools:layout="@layout/fragment_check_user" >
+
+        <argument
+            android:name="data_splash"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_checkUserFragment_to_loginFragment"
+            app:destination="@id/loginFragment">
+
+        </action>
+        <action
+            android:id="@+id/action_checkUserFragment_to_registerFragment2"
+            app:destination="@id/registerFragment">
+
+            <argument
+                android:name="data_splash"
+                app:argType="string"
+                android:defaultValue="Hello" />
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.saurabh.navigationappktn.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.saurabh.navigationappktn.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+
+
+</navigation>
